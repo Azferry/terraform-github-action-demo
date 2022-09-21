@@ -1,0 +1,37 @@
+
+name: TFSec Security Scan
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+  workflow_call:
+
+  workflow_dispatch:
+
+jobs:
+  tfsec:
+    name: tfsec sarif report
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: tfsec
+        uses: aquasecurity/tfsec-sarif-action@v0.1.0
+        with:
+          sarif_file: tfsec.sarif ## Need to be a org with code scanning enabled
+          full_repo_scan: true
+
+      - name: Upload SARIF file ## Need to be a org with code scanning enabled
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: tfsec.sarif
