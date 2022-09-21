@@ -1,0 +1,33 @@
+name: Subscriptions
+
+on:
+  pull_request:
+    paths:
+    - 'tf_deploy_subscription/**'
+
+  workflow_dispatch:
+
+  push:
+    branches:
+     - main
+    paths:
+    - 'tf_deploy_subscription/**'
+
+  workflow_call:
+
+jobs:
+  palofw:
+    uses: ./.github/workflows/template-terraform-run.yml
+    with:
+      WORKING_DIR: './tf_deploy_subscription'
+      TF_STATE_FILE: 'az_subscription1.tfstate'
+      TF_VARS_FILE: 'az_subscription1.tfvars'
+    secrets:
+      TF_STATE_RG: ${{ secrets.TERRAFORM_STATE_RG }}
+      TF_STATE_SA: ${{ secrets.TERRAFORM_STATE_SA }}
+      TF_STATE_CONTAINER: ${{ secrets.TERRAFORM_STATE_CONTAINER }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
