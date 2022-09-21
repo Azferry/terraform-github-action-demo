@@ -2,6 +2,8 @@ name: Subscriptions
 
 on:
   pull_request:
+    branches:
+    - main
     paths:
     - './infa/tf_deploy_subscription/**'
 
