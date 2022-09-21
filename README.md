@@ -29,7 +29,7 @@ Automatically creates documentation from the terraform code and pushes it back i
 
 ### TFSec Code Scanner
 
-> :warning: **GitHub Advanced Security Needed**: GitHub Advanced Security is needed to publish TFSec results to the security tab in the repo. Advanced Security available for enterprise accounts on GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub Cloud Public repository.
+> :warning: **GitHub Advanced Security Needed**: GitHub Advanced Security is needed to publish TFSec results to the security tab in the repo. Advanced Security available for enterprise accounts on GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub Cloud Public repository. An alternative option is to output the results to the pipeline artifacts.
 
 tfsec is a static code security scanner for Terraform code. It ensures that security issues can be detected before your infrastructure changes take effect.
 
