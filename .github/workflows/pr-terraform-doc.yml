@@ -41,3 +41,13 @@ jobs:
         git-push: "true"
         # recursive: true
         # recursive-path: ../modules
+
+    - name: Render terraform docs
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        working-dir: ./infa/tf_deploy_palo
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
+        # recursive: true
+        # recursive-path: ../modules
