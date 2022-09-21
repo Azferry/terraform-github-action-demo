@@ -1,0 +1,35 @@
+name: All Run - Full Env Release
+
+on:
+
+  workflow_call:
+
+  workflow_dispatch:
+
+#   push:
+#     branches:
+#     - main
+#     paths:
+
+#   pull_request:
+#     branches:
+#     - main
+#     paths:
+
+#   schedule:
+#     - cron:  '30 3 * * 2,3'
+
+jobs:
+  subscriptions:
+    uses: ./.github/workflows/tf_deploy_subscriptions.yml
+    secrets: inherit
+
+  network:
+    uses: ./.github/workflows/tf_deploy_network.yml
+    needs: subscriptions
+    secrets: inherit
+
+  landingzones:
+    uses: ./.github/workflows/tf_deploy_landingzones.yml
+    needs: network
+    secrets: inherit
