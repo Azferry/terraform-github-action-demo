@@ -34,6 +34,11 @@ jobs:
     needs: subscriptions
     secrets: inherit
 
+  palo:
+    uses: ./.github/workflows/tf_deploy_palo.yml
+    needs: network
+    secrets: inherit
+
   landingzones:
     uses: ./.github/workflows/tf_deploy_landingzones.yml
     needs: network

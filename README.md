@@ -23,6 +23,14 @@ Demo to show how to use github actions and azure enterprise scale landing zones
 
 Use multiple service principals to scope access down to the level of resources.
 
+### Github Action Templates
+
+Create reusable templates to simplify the management of github actions.
+
+### Block code push to main
+
+Enforce all code pushes to go through the pull request process.
+
 ## Create service principal
 
 Create a service principal with RBAC access over the subscription
@@ -49,6 +57,7 @@ Running the command will output a JSON structure with will be the value for the 
 Used to add comments on the Pull Request
 
 1. https://github.com/settings/tokens
+2. Give full access to the repo
 
 ## Terraform Storage Account Setup
 
