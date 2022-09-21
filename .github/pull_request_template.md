@@ -11,7 +11,3 @@
 ### Testing
 
 *Which tests were added? Which existing tests were adapted/changed? Which situations are covered, and what edge cases are missing?*
-
-### Jira Issues
-
-*Jira Issue IDs*
