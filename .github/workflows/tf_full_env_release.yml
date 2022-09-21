@@ -20,13 +20,23 @@ on:
 #     - cron:  '30 3 * * 2,3'
 
 jobs:
+  tfsecscan:
+    uses: ./.github/workflows/tfsec.yml
+    secrets: inherit
+
   managementgroup:
-    uses: ./.github/workflows/tf_deplpy_mg_structure.yml
+    uses: ./.github/workflows/tf_deploy_mg_structure.yml
+    needs: tfsecscan
     secrets: inherit
 
   subscriptions:
     uses: ./.github/workflows/tf_deploy_subscriptions.yml
     needs: managementgroup
+    secrets: inherit
+  
+  coremg:
+    uses: ./.github/workflows/tf_deploy_core_mgmt.yml
+    needs: subscriptions
     secrets: inherit
 
   network:
