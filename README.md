@@ -21,7 +21,6 @@ Built in terraform tools to validate the code
 * terraform fmt - linter to check if the code is in the correct format
 * terraform validate - linter that checks to see if the code is valid
 * terraform plan
-* terraform apply
 
 ### Terraform Docs
 
