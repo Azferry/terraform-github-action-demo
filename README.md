@@ -17,14 +17,14 @@ Demo to show how to use github actions and azure enterprise scale landing zones
    7. TERRAFORM_STATE_SA
    8. TERRAFORM_STATE_RG
    9. TERRAFORM_STATE_CONTAINER
-   10. PR_GH_TOKEN 
+   10. PR_GH_TOKEN
 
 
-3. Add github secrets to repository
-   1. PR_GH_TOKEN = 
+## Best Practices
 
-Securing pipelines 
-Recommended to use multiple different service principals to socpe access
+### Azure environment credentials
+
+Use multiple service principals to scope access down to the level of resources.
 
 
 ## Create service principal
@@ -47,6 +47,12 @@ Running the command will output a JSON structure with will be the value for the 
   "tenant": "<<AAD TENANT ID>>"
 }
 ```
+
+## Generate Github Token
+
+Used to add comments on the Pull Request
+
+1. https://github.com/settings/tokens
 
 ## Terraform Storage Account Setup
 
