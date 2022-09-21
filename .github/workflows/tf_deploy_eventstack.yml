@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - 'infa/palo/**'
+    - 'infa/tf_deploy_eventstack/**'
 
   workflow_dispatch:
 
@@ -13,7 +13,7 @@ on:
     branches:
      - main
     paths:
-    - 'infa/palo/**'
+    - 'infa/tf_deploy_eventstack/**'
 
   workflow_call:
 
@@ -21,9 +21,9 @@ jobs:
   palo:
     uses: ./.github/workflows/template-terraform-run.yml
     with:
-      WORKING_DIR: './infa/tf_deploy_palo'
-      TF_STATE_FILE: 'palo.tfstate'
-      TF_VARS_FILE: 'palo.tfvars'
+      WORKING_DIR: './infa/tf_deploy_eventstack'
+      TF_STATE_FILE: 'eventstack.tfstate'
+      TF_VARS_FILE: 'eventstack.tfvars'
     secrets:
       TF_STATE_RG: ${{ secrets.TERRAFORM_STATE_RG }}
       TF_STATE_SA: ${{ secrets.TERRAFORM_STATE_SA }}

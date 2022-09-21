@@ -44,4 +44,8 @@ jobs:
     needs: network
     secrets: inherit
 
+  eventstack:
+    uses: ./.github/workflows/tf_deploy_eventstack.yml
+    needs: network
+    secrets: inherit
 
