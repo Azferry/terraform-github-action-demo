@@ -14,6 +14,15 @@ Example use case on how to use github actions and terrafrom on azure to accelera
 
 ## Tools used in demo
 
+### Built in Terraform tools
+
+Built in terraform tools to validate the code
+
+* terraform fmt - linter to check if the code is in the correct format
+* terraform validate - linter that checks to see if the code is valid
+* terraform plan
+* terraform apply
+
 ### Terraform Docs
 
 Automatically creates documentation from the terraform code and pushes it back into the repository.
@@ -32,17 +41,24 @@ tfsec is a static code security scanner for Terraform code. It ensures that secu
 ## Setup
 
 1. Create storage account to store the terraform state
-2. Add github secrets to repository
-   1. ARM_ACCESS_KEY
-   2. ARM_CLIENT_ID
-   3. ARM_CLIENT_SECRET
-   4. ARM_MGMT_SUBID
-   5. ARM_TENANT_ID
-   6. AZ_CLI_CREDENTIALS - Paste the output of the sp create command
-   7. TERRAFORM_STATE_SA
-   8. TERRAFORM_STATE_RG
-   9. TERRAFORM_STATE_CONTAINER
-   10. PR_GH_TOKEN
+2. Create the github secrets in the repository for actions
+
+### Set the github secrets
+
+Under the repository settings
+
+| Secret                    | Use           | Value                                                        |
+| ------------------------- | ------------- | ------------------------------------------------------------ |
+| ARM_CLIENT_ID             | Terraform     | Service principal with access to azure                       |
+| ARM_CLIENT_SECRET         | Terraform     | Service principal with access to azure                       |
+| ARM_TENANT_ID             | Terraform     | Service principal with access to azure                       |
+| ARM_ACCESS_KEY            | Terraform     | Storage account key for the TF remote state                  |
+| ARM_SUBSCRIPTION_ID       | Terraform     | Subscription ID for the storage account                      |
+| TERRAFORM_STATE_SA        | Terraform     | Storage account name for the tf state file                   |
+| TERRAFORM_STATE_RG        | Terraform     | Resource group of the storage account                        |
+| TERRAFORM_STATE_CONTAINER | Terraform     | Storage account container the state file is in               |
+| PR_GH_TOKEN               | Gh Action Bot | Personal access token for github to comment on pull requests |
+| AZ_CLI_CREDENTIALS        | Gh Action Bot | Service principal creds in json format (below)               |
 
 ## Best Practices
 
