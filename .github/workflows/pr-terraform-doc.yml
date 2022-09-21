@@ -15,7 +15,27 @@ jobs:
     - name: Render terraform docs
       uses: terraform-docs/gh-actions@v1.0.0
       with:
-        working-dir: .
+        working-dir: ./infa/tf_deploy_landingzone
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
+        # recursive: true
+        # recursive-path: ../modules
+
+    - name: Render terraform docs
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        working-dir: ./infa/tf_deploy_network
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
+        # recursive: true
+        # recursive-path: ../modules
+
+    - name: Render terraform docs
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        working-dir: ./infa/tf_deploy_subscription
         output-file: README.md
         output-method: inject
         git-push: "true"
