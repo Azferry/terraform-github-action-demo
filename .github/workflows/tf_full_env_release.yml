@@ -33,11 +33,6 @@ jobs:
     uses: ./.github/workflows/tf_deploy_subscriptions.yml
     needs: managementgroup
     secrets: inherit
-  
-  coremg:
-    uses: ./.github/workflows/tf_deploy_core_mgmt.yml
-    needs: subscriptions
-    secrets: inherit
 
   network:
     uses: ./.github/workflows/tf_deploy_network.yml
@@ -48,6 +43,11 @@ jobs:
     uses: ./.github/workflows/tf_deploy_palo.yml
     needs: network
     secrets: inherit
+    
+  coremg:
+    uses: ./.github/workflows/tf_deploy_core_mgmt.yml
+    needs: subscriptions
+    secrets: inherit
 
   landingzones:
     uses: ./.github/workflows/tf_deploy_landingzones.yml
@@ -56,6 +56,6 @@ jobs:
 
   eventstack:
     uses: ./.github/workflows/tf_deploy_eventstack.yml
-    needs: network
+    needs: coremg
     secrets: inherit
 
