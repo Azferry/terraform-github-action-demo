@@ -1,7 +1,5 @@
 # Terraform Github Action Demo
 
-## Overview
-
 Demo to show how to use github actions and azure enterprise scale landing zones
 
 ## Setup
@@ -19,13 +17,11 @@ Demo to show how to use github actions and azure enterprise scale landing zones
    9. TERRAFORM_STATE_CONTAINER
    10. PR_GH_TOKEN
 
-
 ## Best Practices
 
 ### Azure environment credentials
 
 Use multiple service principals to scope access down to the level of resources.
-
 
 ## Create service principal
 
