@@ -2,6 +2,25 @@
 
 Demo to show how to use github actions and azure enterprise scale landing zones
 
+## Tools used in demo
+
+### Terraform Docs
+
+Automatically creates documentation from the terraform code and pushes it back into the repository.
+
+### TFSec Code Scanner
+
+> :warning: **GitHub Advanced Security Needed**: GitHub Advanced Security is needed to publish TFSec results to the security tab in the repo. Advanced Security available for enterprise accounts on GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub Cloud Public repository.
+
+tfsec is a static code security scanner for Terraform code. It ensures that security issues can be detected before your infrastructure changes take effect.
+
+Resources
+
+* [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security)
+* [Setup Code Scanning](https://docs.github.com/en/enterprise-server@3.4/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository)
+* [TFSec Security Rules](https://aquasecurity.github.io/tfsec/v1.28.0/checks/azure/appservice/account-identity-registered/)
+* [TFSec Documentation](https://aquasecurity.github.io/tfsec/v1.28.0/guides/github-actions/github-action/)
+
 ## Setup
 
 1. Create storage account to store the terraform state
