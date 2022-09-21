@@ -1,6 +1,16 @@
 # Terraform Github Action Demo
 
-Demo to show how to use github actions and azure enterprise scale landing zones
+Example use case on how to use github actions and terrafrom on azure to accelerate the adoption of enterprise scale landing zones.
+
+## Microsoft Resources
+
+* [What is an Azure landing zone?](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/)
+* [Microsoft Docs - Terraform On Azure](https://learn.microsoft.com/azure/developer/terraform/)
+* Azure Terraform providers
+  * [azurerm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+  * [azuread](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs)
+  * [azapi](https://registry.terraform.io/providers/Azure/azapi/latest/docs)
+  * [azstack](https://registry.terraform.io/providers/hashicorp/azurestack/latest/docs)
 
 ## Tools used in demo
 
@@ -13,8 +23,6 @@ Automatically creates documentation from the terraform code and pushes it back i
 > :warning: **GitHub Advanced Security Needed**: GitHub Advanced Security is needed to publish TFSec results to the security tab in the repo. Advanced Security available for enterprise accounts on GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub Cloud Public repository.
 
 tfsec is a static code security scanner for Terraform code. It ensures that security issues can be detected before your infrastructure changes take effect.
-
-Resources
 
 * [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security)
 * [Setup Code Scanning](https://docs.github.com/en/enterprise-server@3.4/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository)
