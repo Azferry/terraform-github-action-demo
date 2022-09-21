@@ -29,13 +29,6 @@ on:
             required: true
         ARM_ACCESS_KEY:
             required: true
-    outputs:
-      firstword:
-        description: "The first output string"
-        value: ${{ jobs.example_job.outputs.output1 }}
-      secondword:
-        description: "The second output string"
-        value: ${{ jobs.example_job.outputs.output2 }}
 
 jobs:
   terraform:
@@ -46,18 +39,12 @@ jobs:
         shell: bash
         working-directory: ${{ inputs.working_dir }}
 
-    outputs:
-      output1: ${{ steps.step1.outputs.firstword }}
-      output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-        # with:
-        #   terraform_version: 1.1.7
-        #   https://github.com/hashicorp/setup-terraform
 
       - name: Export Azure CLI Credentials
         run: |
@@ -132,8 +119,3 @@ jobs:
         id: apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -var-file="${{ inputs.TF_VARS_FILE }}" -auto-approve
-
-    #   - id: step1
-    #     run: echo "::set-output name=firstword::hello"
-    #   - id: step2
-    #     run: echo "::set-output name=secondword::world"
