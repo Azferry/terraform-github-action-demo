@@ -44,7 +44,7 @@ tfsec is a static code security scanner for Terraform code. It ensures that secu
 
 ### Set the github secrets
 
-Under the repository settings
+Under the repository settings > actions > secrets
 
 | Secret                    | Use           | Value                                                        |
 | ------------------------- | ------------- | ------------------------------------------------------------ |
