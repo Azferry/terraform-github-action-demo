@@ -3,7 +3,7 @@ name: Subscriptions
 on:
   pull_request:
     paths:
-    - 'tf_deploy_subscription/**'
+    - './infa/tf_deploy_subscription/**'
 
   workflow_dispatch:
 
@@ -11,7 +11,7 @@ on:
     branches:
      - main
     paths:
-    - 'tf_deploy_subscription/**'
+    - './infa/tf_deploy_subscription/**'
 
   workflow_call:
 
@@ -19,7 +19,7 @@ jobs:
   palofw:
     uses: ./.github/workflows/template-terraform-run.yml
     with:
-      WORKING_DIR: './tf_deploy_subscription'
+      WORKING_DIR: './infa/tf_deploy_subscription'
       TF_STATE_FILE: 'az_subscription1.tfstate'
       TF_VARS_FILE: 'az_subscription1.tfvars'
     secrets:
