@@ -71,7 +71,7 @@ Create reusable templates to simplify the management of github actions.
 
 ### Block code push to main
 
-Enforce all code pushes to go through the pull request process.
+Use branch polices to enforce all code pushes to go through the pull request process.
 
 ## Create service principal
 
