@@ -65,13 +65,17 @@ Under the repository settings > actions > secrets
 
 Use multiple service principals to scope access down to the level of resources.
 
-### Github Action Templates
+### Github Reusable Workflows
 
-Create reusable templates to simplify the management of github actions.
+Avoid duplicating workflows. Creating reusable workflows for repeatable functionality that can be called from another workflow making it easier to maintain and creating new workflows. For example a reusable workflow that handles all the task for terraform.
 
-### Block code push to main
+* [Github Reusing Workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows#using-outputs-from-a-reusable-workflow)
 
-Use branch polices to enforce all code pushes to go through the pull request process.
+### Github Branch Protection Rules
+
+Use branch protection rules to enforce all code pushes go through the pull request process. Branch protection rules can be setup to require reviewers approval and passing status checks before merging the code into the main branch.
+
+* [Github Branch Protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule)
 
 ## Create service principal
 
